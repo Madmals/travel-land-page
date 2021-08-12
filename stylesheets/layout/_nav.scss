@@ -1,0 +1,39 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  // max-width:1180px;
+  width: 100%;
+  .logo {
+    img {
+      padding: 5px;
+      border-radius: 50%;
+      height: 50px;
+      width: 50;
+    }
+  }
+
+  ul {
+    display: flex;
+    margin-right: 200px;
+    margin-top: 5px;
+    li {
+      list-style: none;
+      padding: 5px;
+      a {
+        color: $text-color;
+      }
+      a:hover {
+        height: 4em;
+        padding: 0.5em;
+        margin: 1em auto;
+        background-color: $lime-green;
+        border: none;
+        border-radius: 3px;
+        text-transform: uppercase;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        text-decoration: none;
+      }
+    }
+  }
+}

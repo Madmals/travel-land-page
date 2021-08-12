@@ -32,3 +32,15 @@
   }
 }
 
+
+@mixin center-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin align-center{
+  display: flex;
+  align-items: center;
+}
+

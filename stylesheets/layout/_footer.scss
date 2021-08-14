@@ -1,3 +1,64 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+
+footer {
+  background-color: $green-sedang;
+  margin-top: 100px;
+  height: 40vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 60px;
+  img {
+    padding: 5px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50;
+  }
+  a {
+    color: $text-color;
+  }
+
+  a:hover,
+  a:focus {
+    color: rgb(29, 31, 26);
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .card_footer_subcribe {
+    background-color: #fff;
+    border-radius: 10px;
+    display: grid;
+    place-items: start;
+    padding: 20px;
+
+    .subcribe {
+      height: 100%;
+      width: 100%;
+      
+
+      input {
+        background-color: $green-sedang;
+	border: none;
+	height: 50px;
+      }
+
+	input::placeholder      {
+	      text-align: center;
+      }
+
+
+      label{
+	background-color:$lime-green;
+	border: none;
+	padding:10px;
+	font-weight: 700;
+	color: #fff;
+	
+      }
+    }
+  }
+}

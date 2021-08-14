@@ -441,10 +441,63 @@ body {
   width: 1px;
 }
 
+footer {
+  background-color: #dae7de;
+  margin-top: 100px;
+  height: 40vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 60px;
+}
+footer img {
+  padding: 5px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50;
+}
+footer a {
+  color: #222222;
+}
+footer a:hover,
+footer a:focus {
+  color: #1d1f1a;
+}
+footer li {
+  list-style: none;
+}
+footer .card_footer_subcribe {
+  background-color: #fff;
+  border-radius: 10px;
+  display: grid;
+  place-items: start;
+  padding: 20px;
+}
+footer .card_footer_subcribe .subcribe {
+  height: 100%;
+  width: 100%;
+}
+footer .card_footer_subcribe .subcribe input {
+  background-color: #dae7de;
+  border: none;
+  height: 50px;
+}
+footer .card_footer_subcribe .subcribe input::placeholder {
+  text-align: center;
+}
+footer .card_footer_subcribe .subcribe label {
+  background-color: #98e7c0;
+  border: none;
+  padding: 10px;
+  font-weight: 700;
+  color: #fff;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
   position: fixed;
+  margin-left: 70px;
+  margin-right: 70px;
   width: 100%;
 }
 nav .logo img {
@@ -491,9 +544,11 @@ button {
 
 body {
   font-family: "Hina Mincho", serif;
+  font-size: 22px;
+}
+body section {
   margin-left: 70px;
   margin-right: 70px;
-  font-size: 22px;
 }
 body .hero {
   height: 100vh;
@@ -630,19 +685,118 @@ body .destination .image_all .img4 {
   grid-row: span 2;
 }
 body .service {
-  margin-top: 100px;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   padding-top: 100px;
   justify-content: space-between;
+  padding-bottom: 50px;
 }
-body .service .card {
+body .service .first_service {
+  display: flex;
+  height: 30%;
+}
+body .service .first_service .card {
   width: 400px;
-  height: 300px;
+  height: 250px;
   padding: 10px;
 }
-body .service .card:hover {
+body .service .first_service .card:hover {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+body .service .second_service {
+  margin-top: 100px;
+  height: 70%;
+  display: flex;
+}
+body .service .second_service .card_first {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  width: 50%;
+  background-color: #dae7de;
+  margin-right: 5px;
+}
+body .service .second_service .card_second {
+  padding: 10px;
+  background-image: url("https://images.unsplash.com/photo-1527058054345-f870ffe763eb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+body .service .second_service .card_second .container_card_second {
+  display: flex;
+  justify-content: center;
+  width: 55%;
+  align-items: flex-end;
+  text-align: center;
+}
+body .service .second_service .card_second .container_card_second .card_container {
+  background-color: #fff;
+  width: 100%;
+  padding: 10px;
+  margin-right: 10px;
+}
+body .service .second_service .card_second .container_card_second .card_container h1 {
+  color: #98e7c0;
+}
+body .aboutus {
+  height: 100vh;
+  width: 100%;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .aboutus iframe {
+  background-color: #fff;
+}
+body .aboutus .card_three {
+  padding-bottom: 10px;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .aboutus .card_three h2 {
+  text-align: center;
+  font-size: 40px;
+}
+body .aboutus .card_three .card_lis {
+  height: 70%;
+  width: 50%;
+  display: flex;
+}
+body .aboutus .card_three .card_lis .card_in_card_three img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+body .aboutus .card_three .card_lis .card {
+  background-color: #dae7de;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 60%;
+}
+body .aboutus .card_three .card_lis .card p {
+  width: 50%;
+  padding-top: 100px;
+}
+body .aboutus .card_three .card_lis .card .avatar img {
+  border-radius: 50%;
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=main.css.map */

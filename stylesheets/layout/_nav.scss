@@ -2,15 +2,17 @@ nav {
   display: flex;
   justify-content: space-between;
   position: fixed;
-  margin-left: 70px;
   margin-right: 70px;
   width: 100%;
+  z-index: 3;
+  padding:5px;
   .logo {
     img {
       padding: 5px;
       border-radius: 50%;
       height: 50px;
       width: 50;
+      
     }
   }
 

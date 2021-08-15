@@ -658,21 +658,40 @@ body .destination .search_destination .check_out {
 body .destination .image_all {
   padding: 20px;
   display: grid;
-  height: 100%;
+  height: 70%;
   gap: 5px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 280px;
   grid-auto-flow: dense;
   width: 80%;
+  background-color: blue;
 }
 body .destination .image_all img {
   border-radius: 10px;
   width: 100%;
-  max-height: 100%;
-  object-fit: cover;
+  height: 20%;
+  object-fit: contain;
 }
-body .destination .image_all div.img5 {
-  height: 90%;
+body .destination .image_all .img1 {
+  grid-column: span 2;
+  grid-row: span 2;
+  display: none;
+}
+body .destination .image_all .img2 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+body .destination .image_all .img3 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+body .destination .image_all .img4 {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+body .destination .image_all .img5 {
+  grid-column: span 4;
+  grid-row: span 2;
 }
 body .service {
   height: 100vh;

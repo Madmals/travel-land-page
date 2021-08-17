@@ -43,12 +43,6 @@ const clear = () => {
 }
 
 
-//button input submit
-button.addEventListener('click', () => {
-	clear()
-	test_api()
-})
-
 
 //api compliment
 let rev = document.querySelector(".review")
@@ -74,123 +68,101 @@ const avatar = async () => {
 
 }
 
-//api place information
+//api place information\\\
 
-function initMap(){
+
+function initMap() {
+
 	let places = new google.maps.LatLng(3.1390, 101.6869);
-	let map = new google.maps.Map(document.getElementById('map'), {
+	map = new google.maps.Map(document.getElementById('map'), {
 		center: places,
-		zoom: 15,
-		mapId: "8d193001f940fde3"
+		zoom: 14,
 	});
 
-	let request = {
-		location: places,
-		radius: '500',
-		type: ['restaurant']
-	};
 
-	service = new google.maps.places.PlacesService(map);
-	service.nearbySearch(request, callback);
-}
+	//geolocation init
+	geocoder = new google.maps.Geocoder();
 
-const callback = (results, status) => {
-	if (status == google.maps.places.PlacesServiceStatus.OK) {
-		for (let i = 0; i < results.length; i++) {
-			createMarker(results[i]);
-		}
+	const geo_address = (geocoder, resultMap) => {
+
+		let address = document.querySelector(".location").value
+
+		geocoder.geocode({ address: address })
+			.then(({ results }) => {
+
+
+				let places = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+				map = new google.maps.Map(document.getElementById('map'), {
+					center: places,
+					zoom: 14,
+					mapId: "8d193001f940fde3"
+				});
+
+
+				let request = {
+					location: places,
+					radius: '1500',
+					type: ['lodging']
+				};
+
+
+				const callback = (res, status) => {
+					if (status == google.maps.places.PlacesServiceStatus.OK) {
+						for (let i = 0; i < res.length; i++) {
+							createMarker(res[i]);
+						}
+					}
+				}
+
+				//create marker for lodging
+				const createMarker = (data) => {
+					let image = {
+						url: data.icon,
+						size: new google.maps.Size(71, 71),
+						origin: new google.maps.Point(0, 0),
+						anchor: new google.maps.Point(17, 34),
+						scaledSize: new google.maps.Size(25, 25),
+					};
+
+
+					new google.maps.Marker({
+						map,
+						icon: image,
+						title: data.name,
+						position: data.geometry.location,
+					});
+
+
+				}
+
+				//init places api
+				service = new google.maps.places.PlacesService(map);
+
+				//init nearby search nearby api
+				service.nearbySearch(request, callback);
+
+
+
+				return map;
+
+
+
+			})
+			.catch((e) => console.log(e))
+
+
+
 	}
-}
 
-const createMarker = (data) => {
-	const placesList = document.getElementById('places')
-	let image = {
-		url: data.icon,
-		size: new google.maps.Size(200, 71),
-		origin: new google.maps.Point(0, 0),
-		anchor: new google.maps.Point(17, 34),
-		scaledSize: new google.maps.Size(100, 25),
-	};
-
-
-	new google.maps.Marker({
-		map,
-		icon: image,
-		title: data.name,
-		position: data.geometry.location,
+	//search button
+	button.addEventListener('click', () => {
+		clear()
+		test_api()
+		geo_address(geocoder, map)
 	})
-	const li = document.createElement("li");
-	li.textContent = data.name;
-	placesList.appendChild(li);
-
 
 }
 
-// function initMap() {
-// 	// Create the map.
-// 	const pyrmont = { lat: -33.866, lng: 151.196 };
-// 	const map = new google.maps.Map(document.getElementById("map"), {
-// 		center: pyrmont,
-// 		zoom: 17,
-// 		mapId: "8d193001f940fde3",
-// 	});
-// 	// Create the places service.
-// 	const service = new google.maps.places.PlacesService(map);
-// 	let getNextPage;
-// 	const moreButton = document.getElementById("more");
-
-// 	moreButton.onclick = function () {
-// 		moreButton.disabled = true;
-
-// 		if (getNextPage) {
-// 			getNextPage();
-// 		}
-// 	};
-// 	// Perform a nearby search.
-// 	service.nearbySearch(
-// 		{ location: pyrmont, radius: 500, type: "store" },
-// 		(results, status, pagination) => {
-// 			if (status !== "OK" || !results) return;
-// 			addPlaces(results, map);
-// 			moreButton.disabled = !pagination || !pagination.hasNextPage;
-
-// 			if (pagination && pagination.hasNextPage) {
-// 				getNextPage = () => {
-// 					// Note: nextPage will call the same handler function as the initial call
-// 					pagination.nextPage();
-// 				};
-// 			}
-// 		}
-// 	);
-// }
-
-// function addPlaces(places, map) {
-// 	const placesList = document.getElementById("places");
-
-// 	for (const place of places) {
-// 		if (place.geometry && place.geometry.location) {
-// 			const image = {
-// 				url: place.icon,
-// 				size: new google.maps.Size(71, 71),
-// 				origin: new google.maps.Point(0, 0),
-// 				anchor: new google.maps.Point(17, 34),
-// 				scaledSize: new google.maps.Size(25, 25),
-// 			};
-// 			new google.maps.Marker({
-// 				map,
-// 				icon: image,
-// 				title: place.name,
-// 				position: place.geometry.location,
-// 			});
-// 			const li = document.createElement("li");
-// 			li.textContent = place.name;
-// 			placesList.appendChild(li);
-// 			li.addEventListener("click", () => {
-// 				map.setCenter(place.geometry.location);
-// 			});
-// 		}
-// 	}
-// }
 
 
 
@@ -198,10 +170,10 @@ const createMarker = (data) => {
 setInterval(() => {
 	compliment()
 	avatar()
-}, 8000)
+}, 8000);
 
 
-test_api()
+test_api();
 
 
 //nav on scroll change background

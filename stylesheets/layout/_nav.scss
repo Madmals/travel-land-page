@@ -1,41 +1,73 @@
-nav {
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  margin-right: 70px;
-  width: 100%;
-  z-index: 3;
-  padding:5px;
-  .logo {
-    img {
-      padding: 5px;
-      border-radius: 50%;
-      height: 50px;
-      width: 50;
-      
-    }
-  }
+body {
 
-  ul {
+  nav {
     display: flex;
-    margin-right: 200px;
-    margin-top: 5px;
-    li {
-      list-style: none;
-      padding: 5px;
-      a {
-        color: $text-color;
+    justify-content: space-between;
+    position: fixed;
+    margin-right: 70px;
+    width: 100%;
+    z-index: 3;
+    padding: 5px;
+
+    .burger{
+      display:none;
+
+      @include mdd{
+        display: block;
       }
-      a:hover {
-        height: 4em;
-        padding: 0.5em;
-        margin: 1em auto;
-        background-color: $lime-green;
-        border: none;
-        border-radius: 3px;
-        text-transform: uppercase;
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        text-decoration: none;
+    }
+
+
+
+    .logo {
+      img {
+        padding: 5px;
+        border-radius: 50%;
+        height: 50px;
+        width: 50;
+      }
+    }
+
+    ul {
+      display: flex;
+      margin-right: 200px;
+      margin-top: 5px;
+
+      @include mdd {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 90%;
+        left: 100%;
+        transform: translate(-100%, 0%);
+        background-color:rgb(10, 1, 1, 0.6);
+        border-top-left-radius: 5%;
+        border-bottom-left-radius: 5%;
+        width: 40%;
+        padding:5%;
+        li{
+          font-size:40px;
+        
+        }
+      }
+
+      li {
+        list-style: none;
+        padding: 5px;
+        a {
+          color: black;
+        }
+        a:hover {
+          height: 4em;
+          padding: 0.5em;
+          margin: 1em auto;
+          background-color: $lime-green;
+          border: none;
+          border-radius: 3px;
+          text-transform: uppercase;
+          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          text-decoration: none;
+        }
       }
     }
   }

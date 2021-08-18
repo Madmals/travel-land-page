@@ -447,13 +447,39 @@ footer {
   height: 40vh;
   display: flex;
   justify-content: space-between;
-  padding: 60px;
+  padding: 5%;
+}
+@media screen and (max-width: 1016px) {
+  footer {
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .card_footer_one {
+    text-align: center;
+    width: 100%;
+  }
+  footer .card_footer_two {
+    text-align: center;
+    padding: 10%;
+    width: 100%;
+  }
+  footer .card_footer_two h2 {
+    text-align: center;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1500px) {
+  footer {
+    height: 50vh;
+  }
+}
+footer .and {
+  display: flex;
 }
 footer img {
-  padding: 5px;
   border-radius: 50%;
-  height: 50px;
-  width: 50;
 }
 footer a {
   color: #222222;
@@ -470,11 +496,18 @@ footer .card_footer_subcribe {
   border-radius: 10px;
   display: grid;
   place-items: start;
-  padding: 20px;
+  padding: 2%;
+  height: 100%;
 }
 footer .card_footer_subcribe .subcribe {
   height: 100%;
   width: 100%;
+}
+footer .card_footer_subcribe .subcribe .clear {
+  font-size: 110%;
+}
+footer .card_footer_subcribe .subcribe .clear .response {
+  padding: 5% !important;
 }
 footer .card_footer_subcribe .subcribe input {
   background-color: #dae7de;
@@ -484,7 +517,7 @@ footer .card_footer_subcribe .subcribe input {
 footer .card_footer_subcribe .subcribe input::placeholder {
   text-align: center;
 }
-footer .card_footer_subcribe .subcribe label {
+footer .card_footer_subcribe .subcribe .lab {
   background-color: #98e7c0;
   border: none;
   padding: 10px;
@@ -492,7 +525,7 @@ footer .card_footer_subcribe .subcribe label {
   color: #fff;
 }
 
-nav {
+body nav {
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -501,25 +534,51 @@ nav {
   z-index: 3;
   padding: 5px;
 }
-nav .logo img {
+body nav .burger {
+  display: none;
+}
+@media screen and (max-width: 1016px) {
+  body nav .burger {
+    display: block;
+  }
+}
+body nav .logo img {
   padding: 5px;
   border-radius: 50%;
   height: 50px;
   width: 50;
 }
-nav ul {
+body nav ul {
   display: flex;
   margin-right: 200px;
   margin-top: 5px;
 }
-nav ul li {
+@media screen and (max-width: 1016px) {
+  body nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 90%;
+    left: 100%;
+    transform: translate(-100%, 0%);
+    background-color: rgba(10, 1, 1, 0.6);
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
+    width: 40%;
+    padding: 5%;
+  }
+  body nav ul li {
+    font-size: 40px;
+  }
+}
+body nav ul li {
   list-style: none;
   padding: 5px;
 }
-nav ul li a {
-  color: #222222;
+body nav ul li a {
+  color: black;
 }
-nav ul li a:hover {
+body nav ul li a:hover {
   height: 4em;
   padding: 0.5em;
   margin: 1em auto;
@@ -532,7 +591,7 @@ nav ul li a:hover {
 }
 
 button {
-  height: 4em;
+  height: 100%;
   padding: 0.5em;
   margin: 1em auto;
   background-color: #98e7c0;
@@ -543,13 +602,24 @@ button {
   text-decoration: none;
 }
 
+button:hover {
+  font-weight: bolder;
+  color: #fff;
+  cursor: pointer;
+}
+
 body {
   font-family: "Hina Mincho", serif;
-  font-size: 22px;
+  font-size: 1.25vw;
+}
+@media screen and (max-width: 1016px) {
+  body {
+    font-size: 118%;
+  }
 }
 body section {
-  margin-left: 70px;
-  margin-right: 70px;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 body .hero {
   height: 100vh;
@@ -558,16 +628,16 @@ body .hero .whitespace {
   height: 8%;
 }
 body .hero .app {
-  height: 75%;
+  height: 65%;
   width: 100%;
   position: relative;
   z-index: 0;
   overflow: hidden;
   border-radius: 30px;
-  padding-left: 50px;
+  padding-left: 10%;
 }
 body .hero .app .con_card_hero {
-  margin-top: 50px;
+  margin-top: 5%;
   display: flex;
   flex-direction: column;
   width: 70%;
@@ -583,7 +653,7 @@ body .hero .app .con_app {
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  padding-bottom: 180px;
+  padding-bottom: 10%;
 }
 body .hero .app .con_app .googleplay img {
   width: 200px;
@@ -606,39 +676,45 @@ body .hero .app:before {
   border-bottom-right-radius: 30px;
   transform: skewy(-6deg);
   transform-origin: left bottom;
+  height: 100%;
+  width: 100%;
 }
 body .hero .icon {
-  padding: 40px;
+  padding: 5%;
   display: flex;
   justify-content: space-evenly;
 }
 body .destination {
   height: 100vh;
   width: 100%;
+  display: grid;
+  place-items: center;
 }
 body .destination p {
-  font-size: 50px;
-}
-body .destination input {
-  height: 30px;
+  font-size: 300%;
 }
 body .destination .search_destination {
-  height: 50px;
   border-radius: 10px;
-  width: 70%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 80%;
+  padding: 0.3%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-body .destination .search_destination .loc-container {
-  position: relative;
+body .destination .search_destination input {
+  height: 100%;
+  width: 60%;
 }
-body .destination .search_destination .loc-container .location {
+body .destination .search_destination input:focus {
+  outline: none;
+}
+body .destination .search_destination .location {
   border: none;
   border-right: 1px solid black;
 }
-body .destination .search_destination .loc-container .location::placeholder {
+body .destination .search_destination .location::placeholder {
   text-align: center;
   font-size: 20px;
 }
@@ -647,23 +723,44 @@ body .destination .search_destination .check_in {
   border: none;
   border-right: 1px solid black;
   font-family: "Font Awesome 5 Free";
+  padding-left: 10%;
 }
 body .destination .search_destination .check_out {
   content: attr(data-placeholder);
   border: none;
+  padding-left: 10%;
   border-right: 1px solid black;
   font-family: "Font Awesome 5 Free";
   border-right: none;
 }
 body .destination .image_all {
+  position: relative;
   padding: 20px;
   display: grid;
   height: 100%;
   gap: 5px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-rows: 280px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-flow: dense;
   width: 80%;
+}
+@media screen and (max-width: 1016px) {
+  body .destination .image_all {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+@media screen and (max-width: 1335px) {
+  body .destination .image_all {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-auto-rows: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+@media screen and (max-width: 945px) {
+  body .destination .image_all {
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    grid-auto-rows: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }
 body .destination .image_all img {
   border-radius: 10px;
@@ -676,36 +773,54 @@ body .destination .image_all div.img5 {
   height: 90%;
 }
 body .destination #map {
-  height: 200px;
+  height: 17%;
   width: 80%;
   position: absolute;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  bottom: -1000px;
+  bottom: -117%;
   border: 1px solid black;
   border-radius: 10px;
+  margin: auto;
+  margin-left: 10%;
+}
+@media screen and (max-width: 1335px) {
+  body .destination #map {
+    bottom: -120%;
+  }
+}
+@media screen and (max-width: 792px) {
+  body .destination #map {
+    bottom: -110%;
+  }
+}
+@media screen and (max-width: 792px) {
+  body .destination #map {
+    bottom: -118%;
+  }
 }
 body .service {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-top: 100px;
+  padding-top: 10%;
   justify-content: space-between;
-  padding-bottom: 50px;
+  margin-top: 5%;
 }
 body .service .first_service {
   display: flex;
-  height: 30%;
+  height: 40%;
 }
 body .service .first_service .card {
   width: 400px;
   height: 250px;
-  padding: 10px;
+  margin-top: 5%;
+  padding: 2%;
 }
 body .service .first_service .card:hover {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 body .service .second_service {
-  margin-top: 100px;
+  margin-top: 8%;
   height: 70%;
   display: flex;
 }
@@ -737,10 +852,10 @@ body .service .second_service .card_second .container_card_second {
   text-align: center;
 }
 body .service .second_service .card_second .container_card_second .card_container {
-  background-color: #fff;
+  background-color: #f7f3f3;
   width: 100%;
   padding: 10px;
-  margin-right: 10px;
+  margin-right: 2%;
 }
 body .service .second_service .card_second .container_card_second .card_container h1 {
   color: #98e7c0;
@@ -748,16 +863,25 @@ body .service .second_service .card_second .container_card_second .card_containe
 body .aboutus {
   height: 100vh;
   width: 100%;
-  padding-top: 100px;
+  padding-top: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 5%;
 }
 body .aboutus iframe {
   background-color: #fff;
+  width: 50%;
+  height: 50%;
+}
+@media screen and (max-width: 1016px) {
+  body .aboutus iframe {
+    width: 50%;
+    height: 40%;
+  }
 }
 body .aboutus .card_three {
-  padding-bottom: 10px;
+  padding-bottom: 5%;
   width: 100%;
   height: 50%;
   display: flex;
@@ -774,10 +898,22 @@ body .aboutus .card_three .card_lis {
   width: 50%;
   display: flex;
 }
+@media screen and (max-width: 1016px) {
+  body .aboutus .card_three .card_lis {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 body .aboutus .card_three .card_lis .card_in_card_three img {
   object-fit: cover;
   height: 100%;
   width: 100%;
+}
+@media screen and (max-width: 1016px) {
+  body .aboutus .card_three .card_lis .card_in_card_three img {
+    display: none;
+  }
 }
 body .aboutus .card_three .card_lis .card {
   background-color: #dae7de;
@@ -790,13 +926,17 @@ body .aboutus .card_three .card_lis .card {
 }
 body .aboutus .card_three .card_lis .card p {
   width: 50%;
-  padding-top: 100px;
+  padding-top: 20%;
 }
 body .aboutus .card_three .card_lis .card .avatar img {
   border-radius: 50%;
-  height: 50%;
+  height: 90%;
   width: 100%;
   object-fit: cover;
+}
+
+.show_menu {
+  display: grid;
 }
 
 /*# sourceMappingURL=main.css.map */

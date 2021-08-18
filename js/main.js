@@ -164,9 +164,6 @@ function initMap() {
 }
 
 
-
-
-
 setInterval(() => {
 	compliment()
 	avatar()
@@ -174,6 +171,29 @@ setInterval(() => {
 
 
 test_api();
+
+//burger show menu
+
+bur = document.querySelector(".burger")
+navbur = document.querySelector('.bur_add')
+
+bur.addEventListener('click', (e) => {
+
+	//this allow other event handlers on same element to be executed
+	e.stopImmediatePropagation();
+
+
+	navbur.classList.toggle('show_menu')
+})
+
+// click outside of element
+
+body.addEventListener('click', (e) => {
+	if(e.currentTarget != navbur) {
+		navbur.classList.remove('show_menu')
+	}
+
+})
 
 
 //nav on scroll change background
@@ -184,5 +204,6 @@ window.addEventListener('scroll', (e) => {
 	} else {
 		nav.style.background = "white"
 	}
+
 
 })

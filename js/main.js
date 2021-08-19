@@ -12,7 +12,7 @@ const test_api = async () => {
 
 	let place = document.querySelector(".location").value
 
-	let res = await fetch(`https://api.unsplash.com/search/photos?client_id=5DUHnuUyhRR32OnW2yeGm4XRa0jfJBmabeD1Relm8c4&query=${place}?page=1`)
+	let res = await fetch(`https://api.unsplash.com/search/photos?client_id=API_KEY&query=${place}?page=1`)
 	let data = await res.json()
 	let a = data.results.map(urls => `${urls.urls.raw}?&w=768&h=500&fit=crop`)
 
@@ -96,7 +96,7 @@ function initMap() {
 					center: places,
 					zoom: 14,
 					mapId: "8d193001f940fde3"
-				});
+				})
 
 
 				let request = {

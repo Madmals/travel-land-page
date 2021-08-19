@@ -4,7 +4,30 @@
 
 This is mock landing page for travel agency which can be find from dribble [Links](https://dribbble.com/shots/16289724/attachments/8163720?mode=media)
 
-![Travel Page](https://cdn.dribbble.com/users/5542659/screenshots/16289724/media/69c29844b5d369a244d342e5da02352b.jpg)
+![Travel Page](https://cdn.dribbble.com/users/5542659/screenshots/16289724/media/69c29844b5d369a244d342e5da02352b.jpg) 
+
+# Live version that responsive
+
+[Check here for LIVE](https://loving-swartz-9de518.netlify.app/)
+## Desktop
+<img src="./img/desktop.png" alt="drawing" width="300"/>
+
+
+# Mobile
+
+<img src="./img/mobile.png" alt="drawing2" width="300"/>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<!-- ![Mobile Version](./img/mobile.png) -->
+
+
+
+
+
 
 
 
